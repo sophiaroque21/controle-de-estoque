@@ -16,7 +16,9 @@ require_once BASE_PATH . '/includes/cabecalho.php';
         <div class="form-group">
             <label for="nome" class="form-label">Nome:</label>
             <input type="text" name="nome" class="form-control" id="nome" value="id do usuário...">
-        </div>
+</section>
+
+
         <div class="form-group">
             <label for="email" class="form-label">E-mail:</label>
             <input type="email" name="email" class="form-control" id="email" value="email do usuário...">

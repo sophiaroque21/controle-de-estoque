@@ -1,5 +1,11 @@
 <?php
 require_once __DIR__ . '/../config.php';
+require_once BASE_PATH . '/src/usuario_crud.php';
+
+$usuario = buscarUsuario($conexao);
+//echo "<pre>";
+//var_dump($usuario);
+//echo "</pre>";
 
 
 $titulo = "Usuários |";
@@ -27,18 +33,21 @@ require_once BASE_PATH . '/includes/cabecalho.php';
                 </tr>
             </thead>
             <tbody>
-                
+                 <?php foreach ($usuario as $usuario): ?>
                     <tr>
-                        <td>ID do Usuário...</td>
-                        <td>Nome do Usuário...</td>
-                        <td>E-mail do Usuário...</td>
+                        <td><?= $usuario['id'] ?></td>
+                        <td><?= $usuario['nome'] ?></td>
+                        <td><?= $usuario['email'] ?></td>
                         <td class="text-end">
-                            <a class="btn btn-warning btn-sm" href="editar.php"><i class="bi bi-pencil-square"></i> Editar</a>
+                            <a class="btn btn-warning btn-sm" href="editar.php?id=<?= $usuario['id'] ?>"><i class="bi bi-pencil-square"></i> Editar</a>
                         </td>
                         <td class="text-start">
                             <a class="btn btn-danger btn-sm" href="excluir.php"><i class="bi bi-trash"></i> Excluir</a>
                         </td>
                     </tr>
+
+                 <?php endforeach; ?>   
+
                 
             </tbody>
         </table>

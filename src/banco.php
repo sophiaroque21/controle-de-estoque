@@ -22,5 +22,7 @@ try {
 } catch (Throwable $erro) {
 
     die("Erro ao conectar com o banco de dados: " . $erro->getMessage());
+}
+
 
 }
